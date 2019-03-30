@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title></title>
+      <style type="text/css">
+         html,
+         body {
+         	width: 100%;
+         }
+         body {
+         	font-family: Arial;
+         }
+         .shape {
+			width: 100px;
+			height: 100px;
+			background-color: #FF0000;
+			border-width: 1px;
+			border-style: solid;
+			border-color: #000000;
+			display: inline-block;
+         }
+         table {
+         	border: 0;
+         }
+         thead {
+         	background-color: rgb(227, 223, 215);
+         }
+         th {
+         	padding: 3px 10px;
+         }
+         .subheader {
+         	background-color: rgb(248, 247, 245);
+         }
+         #secContainer {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+         }
+		 .square.active{
+			border-style: dotted !important; 
+		 }
+      </style>
+      <script type="text/javascript">
+         var DivObj;
+      </script>
+   </head>
+   <body>
+      <table>
+         <tr>
+         <thead>
+            <tr>
+               <th>Objetos
+               <th>Fondo
+               <th>Tamaño
+               <th>Borde
+         </thead>
+         <tbody>
+            <tr class="subheader">
+               <td>
+                  <input type="button" value="Agregar" id="add">
+               <td>
+                  <legend>Color
+                     <br>
+                  </legend>
+                  <input type="color" value="#FF0000" id="IdColorBack">
+               <td>
+                  <legend>Ancho
+                     <br>
+                  </legend>
+                  <input type="range" min="100" max="500" step="10" value="100" id="IdAncho">
+                  <br> Alto
+                  <br>
+                  </legend>
+                  <input type="range" min="100" max="500" step="10" value="100" id="IdAlto">
+                  <br>
+               <td>
+                  <legend>Ancho
+                     <br>
+                  </legend>
+                  <input type="range" min="1" max="10" step="1" value="1" id="IdBorde">
+                  <br> Color
+                  <br>
+                  </legend>
+                  <input type="color" id="IdColorBorde" value="#000000">
+                  <br>
+         </tbody>
+      </table>
+      <section id="secContainer">
+	  </section>
+	  <script src="shape.js"></script>
+   </body>
+</html>
