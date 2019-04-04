@@ -1,4 +1,4 @@
-const squares = document.getElementsByClassName('square');
+    const squares = document.getElementsByClassName('square');
 
 const loadClick = ()=> {
     console.log(squares);
@@ -17,6 +17,21 @@ const removeClase = () =>{
     });
 };
 
+const rgbToHex = (col) =>{
+
+    if(col.charAt(0)=='r')
+    {
+        col=col.replace('rgb(','').replace(')','').split(',');
+        var r=parseInt(col[0], 10).toString(16);
+        var g=parseInt(col[1], 10).toString(16);
+        var b=parseInt(col[2], 10).toString(16);
+        r=r.length==1?'0'+r:r; g=g.length==1?'0'+g:g; b=b.length==1?'0'+b:b;
+        var colHex='#'+r+g+b;
+        return colHex;
+    }
+    return col;
+}
+
 const idColorBack = document.getElementById('IdColorBack');
 const idAncho = document.getElementById('IdAncho');
 const idAlto = document.getElementById('IdAlto');
@@ -24,11 +39,13 @@ const idBorde = document.getElementById('IdBorde');
 const idColorB = document.getElementById('IdColorBorde');
 
 const setStyle = (item) =>{
-    idColorBack.value = item.getAttribute('style').split(';').find(key =>{ return key.search('background-color') != -1 }).split(':')[1].replace(" ","");
+    console.log(rgbToHex(item.getAttribute('style').split(';').find(key =>{ return key.search('background-color') != -1 }).split(':')[1].replace(" ","")));
+    
+    idColorBack.value = rgbToHex(item.getAttribute('style').split(';').find(key =>{ return key.search('background-color') != -1 }).split(':')[1].replace(" ",""));
     idAncho.value = item.getAttribute('style').split(';').find(key =>{ return key.search('width') != -1 }).split(':')[1].split('px')[0].replace(" ","");
     idAlto.value = item.getAttribute('style').split(';').find(key =>{ return key.search('height') != -1 }).split(':')[1].split('px')[0].replace(" ","");
     idBorde.value =  item.getAttribute('style').split(';').find(key =>{ return key.search('border-width') != -1 }).split(':')[1].split('px')[0].replace(' ','');
-    idColorB.value = item.getAttribute('style').split(';').find(key =>{ return key.search('border-color') != -1 }).split(':')[1].replace(' ',''); 
+    idColorB.value = rgbToHex(item.getAttribute('style').split(';').find(key =>{ return key.search('border-color') != -1 }).split(':')[1].replace(' ','')); 
 }
 
 idColorBack.addEventListener('change',function(){ document.getElementsByClassName('active')[0].style.backgroundColor = this.value;});
