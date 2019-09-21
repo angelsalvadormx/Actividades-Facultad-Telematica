@@ -1,18 +1,17 @@
-var url = window.location.pathname.split('/');
-
+import noFound from './componentes/noFound.js';
+var url = window.location.pathname;
 var ruta = "";
 
 function router(rute,component){
- // Clear array
-  url = url.filter(function (el) {
-    return el != null;
-  });
+ var found = url.search(rute);
 
- var include = url.includes(rute);
- if(include)
- console.log('rute',rute);
- var module = require('./components/'+rute+'.js');
-  console.log(module)
+debugger;
+if(found != -1){
+    component();
+ }else{ 
+  noFound();
+  //window.location.href='404';
+ } 
 }
 
 export default router;

@@ -1,0 +1,5 @@
+RewriteEngine On
+
+#Rewrite url
+#RewriteRule ^([A-Za-z/]+)$ index.html [L,NC]
+RewriteRule ^([0-9A-Za-z/]+)$ index.html [L,NC]

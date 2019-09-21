@@ -1,9 +1,15 @@
+import router from './router.js';
+import home from './componentes/home.js';
+import noFound from './componentes/noFound.js';
 
-import {header,footer} from './componentes/includes.js';
+router('/home',home);
+//router('/404',noFound);
 
 
 
-router('home','home');
+
+//break;
+//return 0;
 /*
 render(header);
 render(footer);
