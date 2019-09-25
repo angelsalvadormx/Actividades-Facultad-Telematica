@@ -1,0 +1,20 @@
+html,body,main{
+  height:100%;
+}
+.bkg-dark{
+  background-color:#343a40;
+  color:#fff;
+}
+.bkg-imagen{
+  background-position:center;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+.logo_ucol{
+  display:block;
+  width:190px;
+  height: 60px;
+  background-size:contain;
+  background-image: url(../assets/logos/ucol.png);
+}
+
