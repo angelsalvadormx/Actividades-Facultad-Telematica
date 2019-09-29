@@ -1,16 +1,25 @@
 import noFound from './componentes/noFound.js';
 var url = window.location.pathname;
+var components = [];
 
-
-function router(rute,component){
- var found = url.search(rute);
-
-if(found != -1){
-    component();
- }else{ 
-  noFound();
-  //window.location.href='404';
- } 
+function run(){
+ var bFound = false;
+ 
+ Object.keys(components).forEach(function(key){
+  if(url.indexOf(key) != -1){
+    bFound = true;
+    components[key]();
+    return 0;
+  }
+ }); 
+ 
+ if(!bFound){
+    noFound();
+ }
 }
 
-export default router;
+function setRoute(route,component){
+  components[route] = component;
+}
+
+export default {run,setRoute};

@@ -1,10 +1,5 @@
-html,body,main{
+html,body,body > main{
   height:100%;
-}
-
-/* Color */
-.white{
-  color:#FFFFFF;
 }
 
 /*Index*/
@@ -12,14 +7,30 @@ html,body,main{
   z-index:2;
 }
 
+.block{
+  display:block;
+}
+
 /* Position */
 .p-r{
   position:relative;
 }
+.p-fixed{
+  position:fixed;
+}
+.p-absolute{
+  position:absolute;
+}
 
+.b-10{
+  bottom:100px;
+}
 /* Flex */
 .flex{
   display:flex;
+}
+.flex.wrap{
+  flex-wrap: wrap;
 }
 .flex.center{
   justify-content:center;
@@ -31,11 +42,28 @@ html,body,main{
 .flex.center-y{
   align-items:center;	
 }
+.flex.around{
+  justify-content: space-around;
+}
 .flex.column{
   flex-direction:column;
 }
+
+/* Tamaños */
 .wh-100{
   width:100%;
+}
+.wh-90{
+  width:90%;
+}
+.wh-80{
+  width:80%;
+}
+.wh-70{
+  width:70%;
+}
+.wh-60{
+  width:60%;
 }
 .wh-50{
   width:50%;
@@ -43,10 +71,15 @@ html,body,main{
 .hgt-100{
   height:100%;
 }
-.bkg-dark{
-  background-color:#343a40;
-  color:#fff;
+/* Tamaños iconos */
+/* Colores */
+.orangered{
+  color:#f74300;
 }
+.bkg-dark{
+  background-color:#000;
+}
+/* Imagenes de fondo*/
 .bkg-imagen{
   background-position:center;
   background-size:cover;
@@ -78,4 +111,13 @@ html,body,main{
   color:#FFF;
   font-size: 25px;
   margin-right:20px;
+}
+.btn-orange{
+  
+}
+
+/* Procedimientos */
+.sec-procedimientos > a {
+  display: block;
+  width:45%;
 }
