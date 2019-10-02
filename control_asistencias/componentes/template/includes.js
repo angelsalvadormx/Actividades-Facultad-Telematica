@@ -28,7 +28,7 @@ const header = `
 `;
 
 const footer = `
-  <footer id="footer" class="container white bg-dark">my footer</footer>
+  <footer id="footer" class="container-fluid text-white bg-dark">my footer</footer>
 `;
 
 export {header,footer};
