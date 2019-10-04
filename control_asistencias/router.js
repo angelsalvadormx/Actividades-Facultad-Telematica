@@ -1,18 +1,25 @@
-var url = window.location.pathname.split('/');
+import noFound from './componentes/noFound.js';
+var url = window.location.pathname;
+var components = [];
 
-var ruta = "";
-
-function router(rute,component){
- // Clear array
-  url = url.filter(function (el) {
-    return el != null;
-  });
-
- var include = url.includes(rute);
- if(include)
- console.log('rute',rute);
- var module = require('./components/'+rute+'.js');
-  console.log(module)
+function run(){
+ var bFound = false;
+ 
+ Object.keys(components).forEach(function(key){
+  if(url.indexOf(key) != -1){
+    bFound = true;
+    components[key]();
+    return 0;
+  }
+ }); 
+ 
+ if(!bFound){
+    noFound();
+ }
 }
 
-export default router;
+function setRoute(route,component){
+  components[route] = component;
+}
+
+export default {run,setRoute};
